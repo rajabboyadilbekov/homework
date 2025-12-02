@@ -4,21 +4,17 @@ class Shaxs:
         self.yosh = yosh
 
     def get_info(self):
-        return f"Ism: {self.ism}, Yosh: {self.yosh}"
+        return f" {self.ism}  {self.yosh}"
 
 
 class Fan:
     def __init__(self, nomi):
         self.nomi = nomi
 
-    def __repr__(self):
-        return self.nomi
-
-
 class Talaba(Shaxs):
     def __init__(self, ism, yosh):
         super().__init__(ism, yosh)
-        self.fanlar = []        # Bo‘sh ro‘yxat
+        self.fanlar = []
 
     def fanga_yozil(self, fan_obj):
         self.fanlar.append(fan_obj)
@@ -30,7 +26,7 @@ class Talaba(Shaxs):
             return "Siz bu fanga yozilmagansiz"
 
     def get_info(self):
-        fanlar_qwe = ", ".join([fan.nomi for fan in self.fanlar]) or " yo‘q"
+        fanlar_qwe = ", ".join([fan.nomi for fan in self.fanlar]) or " yo'q"
         return f"Talaba: {self.ism}, Yosh: {self.yosh}, Fanlar: {fanlar_qwe}"
 
 
@@ -52,10 +48,9 @@ class Foydalanuvchi(Shaxs):
         return f"Foydalanuvchi: {self.ism}, Username: {self.username}"
 
 
-
-
 fan1 = Fan("Matematika")
-fan2 = Fan("Fizika")
+
+fan2 = Fan("informatika")
 
 talaba = Talaba("suheob", 14)
 
@@ -64,7 +59,7 @@ talaba.fanga_yozil(fan2)
 
 print(talaba.get_info())
 
-print(talaba.remove_fan(Fan("Tarix")))
+print(talaba.remove_fan(Fan("ona tili")))
 print(talaba.remove_fan(fan1))
 print(talaba.get_info())
 
