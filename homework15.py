@@ -1,65 +1,32 @@
 class Shaxs:
     def __init__(self, ism, yosh):
-        self.ism = ism
-        self.yosh = yosh
+        self.__ism = ism
+        self.__yosh = yosh
 
-    def get_info(self):
-        return f" {self.ism}  {self.yosh}"
+    def get_ism(self):
+        return self.__ism,
+    def get_yosh(self):
+        return self.__yosh
+inson = Shaxs ("akrom","15")
 
-
-class Fan:
-    def __init__(self, nomi):
-        self.nomi = nomi
-
-class Talaba(Shaxs):
-    def __init__(self, ism, yosh):
-        super().__init__(ism, yosh)
-        self.fanlar = []
-
-    def fanga_yozil(self, fan_obj):
-        self.fanlar.append(fan_obj)
-
-    def remove_fan(self, fan_obj):
-        if fan_obj in self.fanlar:
-            self.fanlar.remove(fan_obj)
-        else:
-            return "Siz bu fanga yozilmagansiz"
-
-    def get_info(self):
-        fanlar_qwe = ", ".join([fan.nomi for fan in self.fanlar]) or " yo'q"
-        return f"Talaba: {self.ism}, Yosh: {self.yosh}, Fanlar: {fanlar_qwe}"
-
-
-class Professor(Shaxs):
-    def __init__(self, ism, yosh, kafedra):
-        super().__init__(ism, yosh)
-        self.kafedra = kafedra
-
-    def get_info(self):
-        return f"Professor: {self.ism}, Yosh: {self.yosh}, Kafedra: {self.kafedra}"
-
-
-class Foydalanuvchi(Shaxs):
-    def __init__(self, ism, yosh, username):
-        super().__init__(ism, yosh)
-        self.username = username
-
-    def get_info(self):
-        return f"Foydalanuvchi: {self.ism}, Username: {self.username}"
-
-
-fan1 = Fan("Matematika")
-
-fan2 = Fan("informatika")
-
-talaba = Talaba("suheob", 14)
-
-talaba.fanga_yozil(fan1)
-talaba.fanga_yozil(fan2)
-
-print(talaba.get_info())
-
-print(talaba.remove_fan(Fan("ona tili")))
-print(talaba.remove_fan(fan1))
-print(talaba.get_info())
-
+print(inson.get_ism())
+print(inson.get_yosh())
+class maxsulot:
+    def __init__(self,nomi,narx,yil,rangi):
+        self.__nomi = nomi
+        self.__narx = narx
+        self.__yil = yil
+        self.__rangi = rangi
+    def get_maxsulot(self):
+        return self.__nomi
+    def get_narx(self):
+        return self.__narx
+    def get_yil(self):
+        return self.__yil
+    def get_rangi(self):
+        return self.__rangi
+mol =maxsulot("cola","12000","2025","qora")
+print(mol.get_maxsulot())
+print(mol.get_narx())
+print(mol.get_yil())
+print(mol.get_rangi())
